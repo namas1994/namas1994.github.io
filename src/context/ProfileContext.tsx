@@ -20,13 +20,17 @@ export type TSkills = {
   index: number;
   name: string;
   level: TSkillLevel;
+  logo?: string;
 }[];
 export type ProfileContextType = {
   name: string;
+  profilePicture: string;
+  jobTitle: string;
   experience: string;
+  location: { city: string; state: string; country: string };
   introduction: {
-    description: string;
-    points: { index: number; description: string }[];
+    description?: string;
+    points?: { index: number; description: string }[];
   };
   education: {
     school: string;
@@ -34,11 +38,12 @@ export type ProfileContextType = {
     fieldOfStudy: string;
     startYear: string;
     endYear: string;
+    logo?: string;
   }[];
   skills: Record<TSkillGroup, TSkills>;
   workHistory: string[];
   blogs: Record<BlogType, { title: string; url: string; postedOn: string }[]>;
-  socialLinks: { platform: string; url: string }[];
+  socialLinks: { platform: string; url: string; logo?: string }[];
   initialized?: React.RefObject<boolean>;
 };
 

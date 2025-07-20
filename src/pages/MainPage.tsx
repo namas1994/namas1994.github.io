@@ -1,6 +1,11 @@
 import {
+  Button,
   FlexBox,
+  Icon,
   Label,
+  Link,
+  List,
+  ListItemCustom,
   ObjectPage,
   ObjectPageSection,
   ObjectPageSubSection,
@@ -9,25 +14,20 @@ import {
   Tag,
   Text,
   Title,
-  Toolbar,
-  ToolbarButton,
-  type ToolbarButtonPropTypes,
 } from "@ui5/webcomponents-react";
 import { useProfile } from "../context/ProfileContext";
 import { EducationList } from "../components/EducationHistory";
 import { SkillList } from "../components/SkillList";
 import { BlogPosts } from "../components/BlogPosts";
 import { WorkHistory } from "../components/WorkHistory";
-
+import { useShellTitle } from "../context/ShellContext";
+import "@ui5/webcomponents-icons/dist/feeder-arrow.js";
 export function MainPage() {
   const profile = useProfile();
-  const handleToolBarBtnClick: ToolbarButtonPropTypes["onClick"] = (e) => {
-    window.open(e.target.dataset.url, "_blank");
-  };
-
+  const { themeState } = useShellTitle();
   return (
     <ObjectPage
-      image="https://media.licdn.com/dms/image/v2/D5603AQHcbq4ia4wGXg/profile-displayphoto-shrink_800_800/B56ZVFc2oAHQAo-/0/1740626947405?e=1758153600&v=beta&t=Fr1VAP3RN06n_6U0a8iQ3Fz8INgz8WGvT7kRnM04xc0"
+      image={profile.profilePicture}
       imageShapeCircle
       mode="Default"
       style={{
@@ -38,51 +38,79 @@ export function MainPage() {
       titleArea={
         <ObjectPageTitle
           header={<Title level="H2">{profile.name}</Title>}
-          subHeader="Senior Developer"
-          actionsBar={
-            <Toolbar design="Transparent">
-              {profile.socialLinks.map((link) => (
-                <ToolbarButton
-                  key={link.platform}
-                  design="Transparent"
-                  text={link.platform}
-                  data-url={link.url}
-                  onClick={handleToolBarBtnClick}
-                />
-              ))}
-            </Toolbar>
-          }
+          subHeader={profile.jobTitle}
           snappedContent={
             <FlexBox alignItems="Center" wrap="Wrap">
               <FlexBox direction="Column" style={{ marginLeft: "64px" }}>
-                <Label>Bengaluru</Label>
-                <Label>Karnataka, India</Label>
+                <Label>{profile.location.city}</Label>
+                <Label>
+                  {profile.location.state}, {profile.location.country}
+                </Label>
               </FlexBox>
             </FlexBox>
           }
         >
-          <Tag key="as" design="Positive" hideStateIcon>
+          <Tag key="as" design="Neutral" hideStateIcon>
             {profile.experience} years of experience
           </Tag>
         </ObjectPageTitle>
       }
     >
-      <ObjectPageSection
-        aria-label="Introduction"
-        id="intro"
-        titleText="Introduction"
-      >
+      <ObjectPageSection aria-label="About Me" id="intro" titleText="About Me">
         <Panel>
-          <Text>{profile.introduction.description}asdf</Text>
-          <ul>
-            {profile.introduction.points.length > 0 &&
+          {profile.introduction.description && (
+            <Text>{profile.introduction.description}</Text>
+          )}
+          <List selectionMode="None">
+            {profile.introduction.points &&
               profile.introduction.points.map((point) => (
-                <li key={point.index}>
+                <ListItemCustom
+                  style={{
+                    minHeight: "1.7rem",
+                  }}
+                >
+                  <Icon name="feeder-arrow" style={{ marginRight: "0.5rem" }} />
                   <Text>{point.description}</Text>
-                </li>
+                </ListItemCustom>
               ))}
-          </ul>
+          </List>
         </Panel>
+        <ObjectPageSubSection id="intro-social" titleText="Social Links">
+          <FlexBox style={{ paddingLeft: "1rem" }}>
+            {profile.socialLinks.map((link) => (
+              <Link
+                target="_blank"
+                href={link.url}
+                style={{ marginRight: "0.5rem" }}
+              >
+                <Button>
+                  <FlexBox>
+                    {link.logo && (
+                      <img
+                        // src={`/logo/${themeState}/${link.logo}`}
+                        src={
+                          link.logo.includes("common")
+                            ? `/logo/${link.logo}`
+                            : `/logo/${themeState}/${link.logo}`
+                        }
+                        style={{ height: "1rem", marginRight: "0.5rem" }}
+                      />
+                    )}
+                    <Text
+                      slot="children"
+                      style={{
+                        fontWeight: "bold",
+                        color: "var(--sapButton_Lite_TextColor)",
+                      }}
+                    >
+                      {link.platform}
+                    </Text>
+                  </FlexBox>
+                </Button>
+              </Link>
+            ))}
+          </FlexBox>
+        </ObjectPageSubSection>
       </ObjectPageSection>
 
       <ObjectPageSection

@@ -35,7 +35,7 @@ export function AppShell() {
   const popoverOpenerRef = useRef<ButtonDomRef | undefined>(undefined);
   const [popoverOpen, setPopoverOpen] = useState(false);
   const [currentTheme, setCurrentTheme] = useState(getTheme);
-  const { shellTitle } = useShellTitle();
+  const { shellTitle, setThemeState } = useShellTitle();
   const navigate = useNavigate();
 
   const handleLogoClick = () => navigate("/");
@@ -46,6 +46,12 @@ export function AppShell() {
 
   const handleThemeSwitch: ListPropTypes["onSelectionChange"] = (e) => {
     const { targetItem } = e.detail;
+    setThemeState(
+      targetItem.dataset.key?.includes("dark") ||
+        targetItem.dataset.key?.includes("hcb")
+        ? "dark"
+        : "light"
+    );
     void setTheme(targetItem.dataset.key!);
     setCurrentTheme(targetItem.dataset.key!);
     setPopoverOpen(false);

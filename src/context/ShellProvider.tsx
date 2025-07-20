@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { ShellTitleContext } from "./ShellContext";
+import { useRef, useState } from "react";
+import { ShellTitleContext, type TThemeMode } from "./ShellContext";
 
 export function ShellTitleProvider({
   children,
@@ -8,14 +8,19 @@ export function ShellTitleProvider({
 }) {
   const [shellTitle, setShellTitle] = useState("Home");
   const initialized = useRef(false);
-  useEffect(() => {
-    document.title =
-      shellTitle === "Dashboard" ? "Portfolio" : `Portfolio: ${shellTitle}`;
-  }, [shellTitle]);
+  const [themeState, setThemeState] = useState<TThemeMode>(
+    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+  );
 
   return (
     <ShellTitleContext.Provider
-      value={{ shellTitle, setShellTitle, initialized }}
+      value={{
+        shellTitle,
+        setShellTitle,
+        initialized,
+        themeState,
+        setThemeState,
+      }}
     >
       {children}
     </ShellTitleContext.Provider>

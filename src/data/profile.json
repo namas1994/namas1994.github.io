@@ -1,10 +1,20 @@
 {
   "name": "Namasivayam M",
-  "title": "Senior Developer",
-  "experience": "8+",
-  "introduction":{
-    "description": "I am a Senior Developer with over 8 years of experience in the SAP ecosystem, specializing in ABAP, RAP, and CAP technologies. I have a strong background in developing application for business processes, with a focus on creating efficient and user-friendly interfaces. ",
-    "points": []
+  "profilePicture": "https://media.licdn.com/dms/image/v2/D5603AQHcbq4ia4wGXg/profile-displayphoto-shrink_800_800/B56ZVFc2oAHQAo-/0/1740626947405?e=1758153600&v=beta&t=Fr1VAP3RN06n_6U0a8iQ3Fz8INgz8WGvT7kRnM04xc0",
+  "jobTitle": "Senior Developer",
+  "location": { "city": "Bengaluru", "state": "Karnataka", "country": "India" },
+  "experience": "🚀 8+",
+  "introduction": {
+    "description": "",
+    "points": [
+      { "index":1, "description":"Senior SAP ABAP Developer with over 8 years of experience in the SAP ecosystem."},
+      { "index":2, "description":"Specialize in ABAP, RAP (RESTful ABAP Programming), and CAP (Cloud Application Programming)."},
+      { "index":3, "description":"Worked extensively on complex logic reports in both ECC and S/4 HANA systems."},
+      { "index":4, "description":"Hands-on experience with all RICEF objects (Reports, Interfaces, Conversions, Enhancements, Forms)."},
+      { "index":5, "description":"Proactively build internal tools to improve team productivity in development and testing."},
+      { "index":6, "description":"Comfortable working with TypeScript for SAP CAP-based application development."},
+      { "index":7, "description":"Strong problem-solving skills and a focus on continuous improvement."}
+    ]
   },
   "education": [
     {
@@ -12,38 +22,46 @@
       "degree": "Master of Technology (M.Tech)",
       "fieldOfStudy": "Cloud Computing",
       "startYear": "2023",
-      "endYear": "2025"
+      "endYear": "2025",
+      "logo":"common/iitp.svg"
     },
     {
       "school": "Chhattisgarh Swami Vivekanand Technical University",
       "degree": "Bachelor of Engineering (BE)",
       "fieldOfStudy": "Computer Science and Engineering",
       "startYear": "2012",
-      "endYear": "2016"
+      "endYear": "2016",
+      "logo": "common/csvtu.png"
     },
     {
       "school": "Kendriya Vidyalaya",
       "degree": "Higher Secondary Education / XII",
       "fieldOfStudy": "Science",
       "startYear": "2011",
-      "endYear": "2012"
+      "endYear": "2012",
+      "logo": "common/kv.svg"
     }
   ],
   "skills": {
     "sapEcosystem": [
-      { "index": 1, "name": "ABAP", "level": "Expert" },
-      { "index": 2, "name": "RAP", "level": "Expert" },
-      { "index": 3, "name": "CAP", "level": "Proficient" },
-      { "index": 4, "name": "Fiori Elements", "level": "Proficient" },
-      { "index": 5, "name": "UI5", "level": "Proficient" }
+      { "index": 1, "name": "ABAP", "level": "Expert", "logo": "common/abap.png" },
+      { "index": 2, "name": "RAP", "level": "Expert", "logo": "common/abap.png" },
+      { "index": 3, "name": "CAP", "level": "Proficient", "logo": "common/cap.svg" },
+      { "index": 4, "name": "Fiori Elements", "level": "Proficient", "logo": "common/sap.svg" },
+      { "index": 5, "name": "UI5", "level": "Proficient", "logo": "ui5.svg" }
     ],
     "backend": [
-      { "index": 6, "name": "Typescript", "level": "Proficient" },
-      { "index": 7, "name": "Javascript", "level": "Proficient" }
+      { "index": 6, "name": "Typescript", "level": "Proficient", "logo": "common/ts.svg" },
+      { "index": 7, "name": "Javascript", "level": "Proficient", "logo": "common/js.png" }
     ],
     "frontend": [
-      { "index": 1, "name": "React", "level": "Proficient" },
-      { "index": 2, "name": "UI5 Web Components (React)", "level": "Proficient" }
+      { "index": 1, "name": "React", "level": "Proficient", "logo": "react.svg" },
+      {
+        "index": 2,
+        "name": "UI5 Web Components (React)",
+        "level": "Proficient",
+        "logo": "ui5-wc.svg"
+      }
     ]
   },
   "workHistory": [],
@@ -74,15 +92,18 @@
   "socialLinks": [
     {
       "platform": "GitHub",
-      "url": "https://github.com/namas1994"
+      "url": "https://github.com/namas1994",
+      "logo": "github.svg"
     },
     {
       "platform": "Linked In",
-      "url": "https://www.linkedin.com/in/namas1994"
+      "url": "https://www.linkedin.com/in/namas1994",
+      "logo": "linkedIn.png"
     },
     {
       "platform": "SAP Community",
-      "url": "https://community.sap.com/t5/user/viewprofilepage/user-id/16473"
+      "url": "https://community.sap.com/t5/user/viewprofilepage/user-id/16473",
+      "logo": "common/sap.svg"
     }
   ]
 }
