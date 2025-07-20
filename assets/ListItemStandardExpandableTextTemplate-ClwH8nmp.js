@@ -1,0 +1,1 @@
+import{E as x,G as m}from"./vendorUi5b-BrxTAqq1.js";import"./vendorUi5a-DZrHRVDn.js";function c(a){const{className:t,text:e,maxCharacters:r,part:s}=a;return x(m,{part:s,class:t,text:e,maxCharacters:r})}export{c as default};
