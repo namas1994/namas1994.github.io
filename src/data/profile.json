@@ -1,0 +1,88 @@
+{
+  "name": "Namasivayam M",
+  "title": "Senior Developer",
+  "experience": "8+",
+  "introduction":{
+    "description": "I am a Senior Developer with over 8 years of experience in the SAP ecosystem, specializing in ABAP, RAP, and CAP technologies. I have a strong background in developing application for business processes, with a focus on creating efficient and user-friendly interfaces. ",
+    "points": []
+  },
+  "education": [
+    {
+      "school": "Indian Institute of Technology, Patna",
+      "degree": "Master of Technology (M.Tech)",
+      "fieldOfStudy": "Cloud Computing",
+      "startYear": "2023",
+      "endYear": "2025"
+    },
+    {
+      "school": "Chhattisgarh Swami Vivekanand Technical University",
+      "degree": "Bachelor of Engineering (BE)",
+      "fieldOfStudy": "Computer Science and Engineering",
+      "startYear": "2012",
+      "endYear": "2016"
+    },
+    {
+      "school": "Kendriya Vidyalaya",
+      "degree": "Higher Secondary Education / XII",
+      "fieldOfStudy": "Science",
+      "startYear": "2011",
+      "endYear": "2012"
+    }
+  ],
+  "skills": {
+    "sapEcosystem": [
+      { "index": 1, "name": "ABAP", "level": "Expert" },
+      { "index": 2, "name": "RAP", "level": "Expert" },
+      { "index": 3, "name": "CAP", "level": "Proficient" },
+      { "index": 4, "name": "Fiori Elements", "level": "Proficient" },
+      { "index": 5, "name": "UI5", "level": "Proficient" }
+    ],
+    "backend": [
+      { "index": 6, "name": "Typescript", "level": "Proficient" },
+      { "index": 7, "name": "Javascript", "level": "Proficient" }
+    ],
+    "frontend": [
+      { "index": 1, "name": "React", "level": "Proficient" },
+      { "index": 2, "name": "UI5 Web Components (React)", "level": "Proficient" }
+    ]
+  },
+  "workHistory": [],
+  "blogs": {
+    "SapCommunity": [
+      {
+        "title": "Excel Upload using RAP: Part -3",
+        "url": "https://community.sap.com/t5/technology-blog-posts-by-members/excel-upload-using-rap-part-3/ba-p/13523443",
+        "postedOn": "2022-05-15T13:20:00Z"
+      },
+      {
+        "title": "Excel Upload using RAP: Part -2",
+        "url": "https://community.sap.com/t5/technology-blog-posts-by-members/excel-upload-using-rap-part-2/ba-p/13522374",
+        "postedOn": "2022-01-27T15:23:00Z"
+      },
+      {
+        "title": "Excel Upload using RAP: Part -1",
+        "url": "https://community.sap.com/t5/technology-blog-posts-by-members/excel-upload-using-rap-part-1/ba-p/13545399",
+        "postedOn": "2022-01-19T16:14:00Z"
+      },
+      {
+        "title": "Easy Handling of Complex Selection Screen",
+        "url": "https://community.sap.com/t5/application-development-and-automation-blog-posts/easy-handling-of-complex-selection-screen/ba-p/13488752",
+        "postedOn": "2020-10-23T06:02:00Z"
+      }
+    ]
+  },
+  "socialLinks": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/namas1994"
+    },
+    {
+      "platform": "Linked In",
+      "url": "https://www.linkedin.com/in/namas1994"
+    },
+    {
+      "platform": "SAP Community",
+      "url": "https://community.sap.com/t5/user/viewprofilepage/user-id/16473"
+    }
+  ]
+}
