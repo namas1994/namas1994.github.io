@@ -64,11 +64,7 @@ export function MainPage() {
           <List selectionMode="None">
             {profile.introduction.points &&
               profile.introduction.points.map((point) => (
-                <ListItemCustom
-                  style={{
-                    minHeight: "1.7rem",
-                  }}
-                >
+                <ListItemCustom>
                   <Icon name="feeder-arrow" style={{ marginRight: "0.5rem" }} />
                   <Text>{point.description}</Text>
                 </ListItemCustom>
@@ -76,18 +72,21 @@ export function MainPage() {
           </List>
         </Panel>
         <ObjectPageSubSection id="intro-social" titleText="Social Links">
-          <FlexBox style={{ paddingLeft: "1rem" }}>
-            {profile.socialLinks.map((link) => (
+          <FlexBox
+            style={{ paddingLeft: "1rem" }}
+            alignItems="Start"
+            wrap="Wrap"
+          >
+            {profile.socialLinks.map((link, idx) => (
               <Link
                 target="_blank"
                 href={link.url}
-                style={{ marginRight: "0.5rem" }}
+                style={{ marginRight: "0.5rem", marginBottom: "0.5rem" }}
               >
-                <Button>
+                <Button id={`social-link-${idx}`}>
                   <FlexBox>
                     {link.logo && (
                       <img
-                        // src={`/logo/${themeState}/${link.logo}`}
                         src={
                           link.logo.includes("common")
                             ? `/logo/${link.logo}`

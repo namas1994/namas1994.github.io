@@ -2,6 +2,7 @@ import { Avatar, FlexBox, Text, Timeline, TimelineItem } from "@ui5/webcomponent
 import { useProfile } from "../context/ProfileContext";
 import calender from "@ui5/webcomponents-icons/dist/calendar.js";
 import { useShellTitle } from "../context/ShellContext";
+import { Utils } from "../utils/common";
 export function EducationList() {
   const { education } = useProfile();
   const { themeState } = useShellTitle();
@@ -17,13 +18,7 @@ export function EducationList() {
           <FlexBox alignItems="Center" gap="0.5rem">
             {edu.logo ? (
               <Avatar initials={edu.school.charAt(0)} shape="Square">
-                <img
-                  src={
-                    edu.logo.includes("common")
-                      ? `/logo/${edu.logo}`
-                      : `/logo/${themeState}/${edu.logo}`
-                  }
-                />
+                <img src={Utils.getLogoUrl(edu.logo, themeState)} />
               </Avatar>
             ) : (
               <Avatar initials={edu.school.charAt(0)} />

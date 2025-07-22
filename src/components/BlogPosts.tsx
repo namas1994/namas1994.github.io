@@ -1,17 +1,23 @@
 import {
+  Avatar,
   Label,
   NotificationList,
   NotificationListItem,
 } from "@ui5/webcomponents-react";
 import { useProfile } from "../context/ProfileContext";
 import type { NotificationListPropTypes } from "@ui5/webcomponents-react";
+import { useShellTitle } from "../context/ShellContext";
+import classes from "../css/CustomStyle.module.css";
+import { Utils } from "../utils/common";
 
 export function BlogPosts() {
   const { blogs } = useProfile();
+  const { themeState } = useShellTitle();
 
   const handleItemClick: NotificationListPropTypes["onItemClick"] = (event) => {
     window.open(event.detail.item.dataset.url, "_blank");
   };
+  console.log("mn",classes);
   return (
     <NotificationList
       onItemClick={handleItemClick}
@@ -21,9 +27,21 @@ export function BlogPosts() {
         <NotificationListItem
           data-url={blog.url}
           key={`blog-${index}`}
+          avatar={
+            blog.logo ? (
+              <Avatar shape="Square" className={classes.customLogoPad}>
+                <img
+                  src={Utils.getLogoUrl(blog.logo, themeState)}
+                  alt={`${blog.title} logo`}
+                />
+              </Avatar>
+            ) : (
+              <Avatar initials={blog.title.charAt(0)} />
+            )
+          }
           footnotes={
             <>
-              <Label>Posted on {formatDateTime(blog.postedOn)}</Label>
+              <Label>Posted on {Utils.formatDateTime(blog.postedOn)}</Label>
               <Label>SAP Community</Label>
             </>
           }
@@ -34,19 +52,3 @@ export function BlogPosts() {
   );
 }
 
-function formatDateTime(isoString: string) {
-  const date = new Date(isoString);
-  const day = date.getDate().toString().padStart(2, "0");
-  const month = date.toLocaleString("en-US", { month: "short" });
-  const year = date.getFullYear();
-  // const time = date
-  //   .toLocaleString("en-US", {
-  //     hour: "numeric",
-  //     minute: "2-digit",
-  //     second: "2-digit",
-  //     hour12: true,
-  //   })
-  //   .replace(",", "");
-  // return `${day}-${month}-${year}, ${time.toLowerCase()}`;
-  return `${day}-${month}-${year}`;
-}

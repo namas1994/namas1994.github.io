@@ -42,7 +42,7 @@ export type ProfileContextType = {
   }[];
   skills: Record<TSkillGroup, TSkills>;
   workHistory: string[];
-  blogs: Record<BlogType, { title: string; url: string; postedOn: string }[]>;
+  blogs: Record<BlogType, { title: string; url: string; postedOn: string, logo?: string; }[]>;
   socialLinks: { platform: string; url: string; logo?: string }[];
   initialized?: React.RefObject<boolean>;
 };

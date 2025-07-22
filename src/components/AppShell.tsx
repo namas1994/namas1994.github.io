@@ -12,8 +12,7 @@ import {
 } from "@ui5/webcomponents-react";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import classes from "./AppShell.module.css";
-import ListMode from '@ui5/webcomponents/dist/types/ListSelectionMode.js';
+import ListMode from "@ui5/webcomponents/dist/types/ListSelectionMode.js";
 import {
   getTheme,
   setTheme,
@@ -21,14 +20,14 @@ import {
 import { useShellTitle } from "../context/ShellContext";
 
 const THEMES = [
-  { key: "sap_horizon", value: "Morning Horizon (Light)" },
-  { key: "sap_horizon_dark", value: "Evening Horizon (Dark)" },
-  { key: "sap_horizon_hcb", value: "Horizon High Contrast Black" },
-  { key: "sap_horizon_hcw", value: "Horizon High Contrast White" },
-  // { key: "sap_fiori_3", value: "Quartz Light" },
-  // { key: "sap_fiori_3_dark", value: "Quartz Dark" },
-  // { key: "sap_fiori_3_hcb", value: "Quartz High Contrast Black" },
-  // { key: "sap_fiori_3_hcw", value: "Quartz High Contrast White" },
+  { key: "sap_horizon", value: "Morning Horizon (Light)", group: "horizon" },
+  { key: "sap_horizon_dark", value: "Evening Horizon (Dark)", group: "horizon" },
+  { key: "sap_horizon_hcb", value: "Horizon High Contrast Black", group: "horizon" },
+  { key: "sap_horizon_hcw", value: "Horizon High Contrast White", group: "horizon" },
+  { key: "sap_fiori_3", value: "Quartz Light", group: "fiori_3" },
+  { key: "sap_fiori_3_dark", value: "Quartz Dark", group: "fiori_3" },
+  { key: "sap_fiori_3_hcb", value: "Quartz High Contrast Black", group: "fiori_3" },
+  { key: "sap_fiori_3_hcw", value: "Quartz High Contrast White", group: "fiori_3" },
 ];
 
 export function AppShell() {
@@ -59,24 +58,19 @@ export function AppShell() {
 
   return (
     <>
-      <ShellBar
-        // logo={<img src={reactLogo} alt={"Vite Logo"} />}
-        primaryTitle="Portfolio"
-        onLogoClick={handleLogoClick}
-      >
+      <ShellBar primaryTitle="Portfolio" onLogoClick={handleLogoClick}>
         <ShellBarItem slot="content">
-          <Title>{shellTitle}</Title>
+          <Title >{shellTitle}</Title>
         </ShellBarItem>
         <ShellBarItem
           icon="palette"
-          text="Change Theme"
+          text="Appearance"
           onClick={handleThemeSwitchItemClick}
         />
       </ShellBar>
 
       <ResponsivePopover
         placement="Bottom"
-        className={classes.popover}
         open={popoverOpen}
         opener={popoverOpenerRef.current}
         onClose={() => {

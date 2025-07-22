@@ -70,30 +70,34 @@
       {
         "title": "Excel Upload using RAP: Part -3",
         "url": "https://community.sap.com/t5/technology-blog-posts-by-members/excel-upload-using-rap-part-3/ba-p/13523443",
-        "postedOn": "2022-05-15T13:20:00Z"
+        "postedOn": "2022-05-15T13:20:00Z",
+        "logo": "common/sap.svg"
       },
       {
         "title": "Excel Upload using RAP: Part -2",
         "url": "https://community.sap.com/t5/technology-blog-posts-by-members/excel-upload-using-rap-part-2/ba-p/13522374",
-        "postedOn": "2022-01-27T15:23:00Z"
+        "postedOn": "2022-01-27T15:23:00Z",
+        "logo": "common/sap.svg"
       },
       {
         "title": "Excel Upload using RAP: Part -1",
         "url": "https://community.sap.com/t5/technology-blog-posts-by-members/excel-upload-using-rap-part-1/ba-p/13545399",
-        "postedOn": "2022-01-19T16:14:00Z"
+        "postedOn": "2022-01-19T16:14:00Z",
+        "logo": "common/sap.svg"
       },
       {
         "title": "Easy Handling of Complex Selection Screen",
         "url": "https://community.sap.com/t5/application-development-and-automation-blog-posts/easy-handling-of-complex-selection-screen/ba-p/13488752",
-        "postedOn": "2020-10-23T06:02:00Z"
+        "postedOn": "2020-10-23T06:02:00Z",
+        "logo": "common/sap.svg"
       }
     ]
   },
   "socialLinks": [
     {
-      "platform": "GitHub",
-      "url": "https://github.com/namas1994",
-      "logo": "github.svg"
+      "platform": "SAP Community",
+      "url": "https://community.sap.com/t5/user/viewprofilepage/user-id/16473",
+      "logo": "common/sap.svg"
     },
     {
       "platform": "Linked In",
@@ -101,9 +105,9 @@
       "logo": "linkedIn.png"
     },
     {
-      "platform": "SAP Community",
-      "url": "https://community.sap.com/t5/user/viewprofilepage/user-id/16473",
-      "logo": "common/sap.svg"
+      "platform": "GitHub",
+      "url": "https://github.com/namas1994",
+      "logo": "github.svg"
     }
   ]
 }

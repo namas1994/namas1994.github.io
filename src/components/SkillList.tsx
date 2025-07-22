@@ -6,6 +6,9 @@ import {
 } from "@ui5/webcomponents-react";
 import { type TSkills } from "../context/ProfileContext";
 import { useShellTitle } from "../context/ShellContext";
+import classes from "../css/CustomStyle.module.css";
+import { Utils } from "../utils/common";
+
 export function SkillList({ skills }: { skills: TSkills }) {
   const { themeState } = useShellTitle();
   return (
@@ -20,16 +23,16 @@ export function SkillList({ skills }: { skills: TSkills }) {
         <Card
           header={
             <CardHeader
-              // avatar={<Icon name="person-placeholder" />}
               avatar={
                 skill.logo ? (
-                  <Avatar initials={skill.name.charAt(0)} shape="Square">
+                  <Avatar
+                    shape="Square"
+                    className={
+                      skill.logo.includes("sap") ? classes.customLogoPad : ""
+                    }
+                  >
                     <img
-                      src={
-                        skill.logo.includes("common")
-                          ? `/logo/${skill.logo}`
-                          : `/logo/${themeState}/${skill.logo}`
-                      }
+                      src={Utils.getLogoUrl(skill.logo, themeState)}
                       alt={`${skill.name} logo`}
                     />
                   </Avatar>
